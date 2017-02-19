@@ -59,18 +59,16 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
     public ngOnInit() {
 
         if (this.value) {
-
             // For primatives we set the index.
-            if (this.value) {
-                if (isPrimative(this.value)) {
-                    this.filteredOptions = cloneObject(this.options);
-                    this.activeItem = this.options.findIndex((option) => option[this.keyId] === this.value);
-                }
-                // For arrays we filter what is not selected.
-                else {
-                    this.filteredOptions = this.multiFilteredOption();
-                }
+            if (isPrimative(this.value)) {
+                this.filteredOptions = cloneObject(this.options);
+                this.activeItem = this.options.findIndex((option) => option[this.keyId] === this.value);
             }
+            // For arrays we filter what is not selected.
+            else {
+                this.filteredOptions = this.multiFilteredOption();
+            }
+
         } else {
             this.filteredOptions = cloneObject(this.options);
         }
@@ -82,12 +80,16 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
      * @returns {any}
      */
     public multiFilteredOption() {
-        return cloneObject(this.options)
-            .filter((option: any) => {
-                return isPrimative(this.value)
-                    ? true
-                    : this.value.indexOf(option[this.keyId]) === -1;
-            });
+        if (this.options) {
+            return cloneObject(this.options)
+                .filter((option: any) => {
+                    return isPrimative(this.value)
+                        ? true
+                        : this.value.indexOf(option[this.keyId]) === -1;
+                });
+        } else {
+            return [];
+        }
     }
 
     /**
@@ -102,9 +104,11 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
 
                 // Make async to prevent internal expression has changed error since we are only checking on searchHidden check.
                 setTimeout(() => {
-                    this.resetSearch();
-                    this.filteredOptions = this.multiFilteredOption();
-                    this.openListSelector(this.displayRef);
+                    if (this.value) {
+                        this.resetSearch();
+                        this.filteredOptions = this.multiFilteredOption();
+                        this.openListSelector(this.displayRef);
+                    }
                 }, 0);
 
             }
