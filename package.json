@@ -1,6 +1,6 @@
 {
   "name": "ng2-select-view",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Group of components to enhance the functionality of a select list. Influenced largely by the select2 project.",
   "main": "index.js",
   "scripts": {
