@@ -61,13 +61,15 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
         if (this.value) {
 
             // For primatives we set the index.
-            if (isPrimative(this.value) && this.value) {
-                this.filteredOptions = cloneObject(this.options);
-                this.activeItem = this.options.findIndex((option) => option[this.keyId] === this.value);
-            }
-            // For arrays we filter what is not selected.
-            else {
-                this.filteredOptions = this.multiFilteredOption();
+            if (this.value) {
+                if (isPrimative(this.value)) {
+                    this.filteredOptions = cloneObject(this.options);
+                    this.activeItem = this.options.findIndex((option) => option[this.keyId] === this.value);
+                }
+                // For arrays we filter what is not selected.
+                else {
+                    this.filteredOptions = this.multiFilteredOption();
+                }
             }
         } else {
             this.filteredOptions = cloneObject(this.options);
