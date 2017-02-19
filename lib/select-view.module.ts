@@ -18,7 +18,8 @@ import {BrowserModule} from "@angular/platform-browser";
     ],
     exports: [
         ListOneComponent,
-        ListManyComponent
+        ListManyComponent,
+        DroplistComponent
     ],
     providers: [
         WindowRefService
