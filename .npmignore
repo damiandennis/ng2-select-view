@@ -4,6 +4,8 @@
 !*.js
 !**/*.js
 !*.html
-!**.html
+!**/*.html
+!*.css
+!**/*.css
 !*.metadata.json
 !**/*.metadata.json
