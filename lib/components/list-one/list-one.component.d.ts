@@ -1,21 +1,19 @@
-import { EventEmitter, OnInit, ElementRef } from "@angular/core";
+import { ElementRef } from "@angular/core";
 import { SelectAbstract } from "../../select.abstract";
-export declare class ListOneComponent extends SelectAbstract implements OnInit {
+import { ControlValueAccessor } from "@angular/forms";
+export declare class ListOneComponent extends SelectAbstract implements ControlValueAccessor {
     protected dropPosition: string;
     protected listRef: ElementRef;
     protected listDisplayRef: ElementRef;
+    protected propagateChange: (_: any) => void;
     options: Array<any>;
     keyId: string;
     valueId: string;
     hasSearch: boolean;
     placeholder: string;
     searchTerm: string;
+    protected loading: boolean;
     value: any;
-    valueChange: EventEmitter<{}>;
-    /**
-     * @inheritDoc
-     */
-    ngOnInit(): void;
     /**
      * Updates the value from the search.
      *
@@ -27,4 +25,16 @@ export declare class ListOneComponent extends SelectAbstract implements OnInit {
      * Finds the text for the specified key.
      */
     setTextByKey(): void;
+    /**
+     * @inheritDoc
+     */
+    writeValue(obj: any): void;
+    /**
+     * @inheritDoc
+     */
+    registerOnChange(fn: any): void;
+    /**
+     * @inheritDoc
+     */
+    registerOnTouched(fn: any): void;
 }

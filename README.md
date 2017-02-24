@@ -43,8 +43,8 @@ export class AppModule { }
 
 ### Somewhere in your project
 ~~~html
-<c-list-one [options]="[{key: '1', value: 'Hello', {key: '2', value: 'Goodbye'}}]"></c-list-one>
-<c-list-many [options]="[{key: '1', value: 'Hello'}, {key: '2', value: 'Goodbye'}]"></c-list-many>
+<c-list-one [options]="[{key: '1', value: 'Hello', {key: '2', value: 'Goodbye'}}]" [(ngModel)]="myValue"></c-list-one>
+<c-list-many [options]="[{key: '1', value: 'Hello'}, {key: '2', value: 'Goodbye'}]" [(ngModel)]="myListValue"></c-list-many>
 ~~~
 
 

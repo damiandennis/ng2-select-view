@@ -1,10 +1,12 @@
-import { EventEmitter, OnChanges, ElementRef } from "@angular/core";
+import { ElementRef } from "@angular/core";
 import { SelectAbstract } from "../../select.abstract";
-export declare class ListManyComponent extends SelectAbstract implements OnChanges {
+import { ControlValueAccessor } from "@angular/forms";
+export declare class ListManyComponent extends SelectAbstract implements ControlValueAccessor {
     protected loading: boolean;
     protected keyList: Array<any>;
     protected valueList: Array<any>;
     protected dropPosition: string;
+    propagateChange: (_: any) => void;
     listRef: ElementRef;
     protected listDisplayRef: ElementRef;
     keyId: string;
@@ -14,11 +16,6 @@ export declare class ListManyComponent extends SelectAbstract implements OnChang
     searchTerm: string;
     options: Array<any>;
     value: any;
-    valueChange: EventEmitter<{}>;
-    /**
-     * @inheritDoc
-     */
-    ngOnChanges(): void;
     /**
      * Finds the text for the specified key.
      */
@@ -36,4 +33,16 @@ export declare class ListManyComponent extends SelectAbstract implements OnChang
      * @param event
      */
     removeItem(index: any, event: Event): void;
+    /**
+     * @inheritDoc
+     */
+    writeValue(obj: any): void;
+    /**
+     * @inheritDoc
+     */
+    registerOnChange(fn: any): void;
+    /**
+     * @inheritDoc
+     */
+    registerOnTouched(fn: any): void;
 }

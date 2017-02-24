@@ -7,7 +7,8 @@ import {
     HostListener,
     Output,
     EventEmitter,
-    OnChanges, ElementRef
+    OnChanges,
+    ElementRef
 } from "@angular/core";
 import {KEY} from "../../utils/key.map";
 import cloneObject from "../../utils/clone.object";
