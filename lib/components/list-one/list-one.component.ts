@@ -3,7 +3,7 @@ import {
     Input,
     ViewChild,
     ElementRef,
-    forwardRef
+    forwardRef, AfterViewInit
 } from "@angular/core";
 import {SelectAbstract} from "../../select.abstract";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
@@ -21,7 +21,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
         }
     ]
 })
-export class ListOneComponent extends SelectAbstract implements ControlValueAccessor {
+export class ListOneComponent extends SelectAbstract implements ControlValueAccessor, AfterViewInit {
 
     protected dropPosition = "below";
 
@@ -35,6 +35,7 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
     @Input() public hasSearch = true;
     @Input() public placeholder = "";
     @Input() public searchTerm = "";
+    @Input() public isBlock = true;
     protected loading = true;
     public value: any;
 
@@ -85,5 +86,12 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
      * @inheritDoc
      */
     public registerOnTouched(fn: any): void {}
+
+    /**
+     * @inheritdoc
+     */
+    public ngAfterViewInit(): void {
+
+    }
 
 }

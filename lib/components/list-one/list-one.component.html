@@ -1,4 +1,4 @@
-<template [ngIf]="!loading && value !== undefined">
+<template [ngIf]="!loading">
     <!-- The hidden selector -->
     <select #listRef
             [ngModel]="value"
@@ -12,6 +12,7 @@
     <!-- shown results -->
     <div #listDisplayRef
          class="select2-container"
+         [ngStyle]="{display: isBlock ? 'block' : 'inline'}"
          [class.select2-dropdown-open]="!isSearchHidden"
          [class.select2-drop-above]="!isSearchHidden && dropPosition == 'above'">
         <a (click)="openSearch($event)"
