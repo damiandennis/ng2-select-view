@@ -97,6 +97,10 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
      * @inheritDoc
      */
     public ngOnChanges(changes: any) {
+
+        if (changes["options"]) {
+            this.filteredOptions = cloneObject(this.options);
+        }
         if (changes["isSearchHidden"]) {
 
             // Reset search if closing.

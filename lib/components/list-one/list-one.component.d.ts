@@ -1,7 +1,7 @@
-import { ElementRef, AfterViewInit } from "@angular/core";
+import { ElementRef, OnChanges, SimpleChanges } from "@angular/core";
 import { SelectAbstract } from "../../select.abstract";
 import { ControlValueAccessor } from "@angular/forms";
-export declare class ListOneComponent extends SelectAbstract implements ControlValueAccessor, AfterViewInit {
+export declare class ListOneComponent extends SelectAbstract implements ControlValueAccessor, OnChanges {
     protected dropPosition: string;
     protected listRef: ElementRef;
     protected listDisplayRef: ElementRef;
@@ -39,7 +39,7 @@ export declare class ListOneComponent extends SelectAbstract implements ControlV
      */
     registerOnTouched(fn: any): void;
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
-    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
 }

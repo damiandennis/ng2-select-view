@@ -3,7 +3,7 @@ import {
     Input,
     ViewChild,
     ElementRef,
-    forwardRef, AfterViewInit
+    forwardRef, OnChanges, SimpleChanges
 } from "@angular/core";
 import {SelectAbstract} from "../../select.abstract";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
@@ -21,7 +21,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
         }
     ]
 })
-export class ListOneComponent extends SelectAbstract implements ControlValueAccessor, AfterViewInit {
+export class ListOneComponent extends SelectAbstract implements ControlValueAccessor, OnChanges {
 
     protected dropPosition = "below";
 
@@ -48,6 +48,7 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
     public updateValue(value: any, event: Event) {
         this.value = value;
         this.setTextByKey();
+        this.propagateChange(value);
     }
 
     /**
@@ -59,6 +60,8 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
             if (index !== -1) {
                 this.valueText = this.options[index][this.valueId];
             }
+        } else {
+            this.valueText = '';
         }
     }
 
@@ -88,10 +91,10 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
     public registerOnTouched(fn: any): void {}
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
-    public ngAfterViewInit(): void {
-
+    public ngOnChanges(changes: SimpleChanges): void {
+        this.setTextByKey();
     }
 
 }
