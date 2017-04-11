@@ -9,7 +9,8 @@
     "package": "rollup -c",
     "minify": "uglifyjs dist/bundles/ng2-select-view.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng2-select-view.umd.min.js",
     "build": "npm run transpile && npm run package && npm run minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
   },
   "author": "Damian Dennis",
   "license": "ISC",
