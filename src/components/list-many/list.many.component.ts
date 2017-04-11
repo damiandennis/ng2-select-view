@@ -10,7 +10,6 @@ import isPrimative from "../../utils/is.primative";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-    moduleId: module.id,
     selector: "c-list-many",
     templateUrl: "list.many.component.html",
     styleUrls: ["list.many.component.css"],

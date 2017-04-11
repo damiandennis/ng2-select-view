@@ -16,7 +16,6 @@ import isPrimative from "../../utils/is.primative";
 import {WindowRefService} from "../../services/windowRefService";
 
 @Component({
-    moduleId: module.id,
     selector: "c-droplist",
     templateUrl: "droplist.component.html",
     styleUrls: ["droplist.component.css"]
@@ -42,7 +41,7 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
     @Input() public keyId = "key";
     @Input() public valueId = "value";
     @Input() public isSearchHidden: boolean = true;
-    @Input() public displayRef: HTMLElement = null;
+    @Input() public displayRef: HTMLElement;
     @Input() public dropPosition = "below";
 
     @Output() public valueChange = new EventEmitter();

@@ -1,11 +1,1 @@
-*
-!*.d.ts
-!**/*.d.ts
-!*.js
-!**/*.js
-!*.html
-!**/*.html
-!*.css
-!**/*.css
-!*.metadata.json
-!**/*.metadata.json
+/dist

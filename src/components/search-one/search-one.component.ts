@@ -3,7 +3,6 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {SelectAbstract} from "../../select.abstract";
 
 @Component({
-    moduleId: module.id,
     selector: "c-search-one",
     templateUrl: "search-one.component.html",
     providers: [

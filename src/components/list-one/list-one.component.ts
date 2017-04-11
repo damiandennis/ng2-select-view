@@ -9,7 +9,6 @@ import {SelectAbstract} from "../../select.abstract";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-    moduleId: module.id,
     selector: "c-list-one",
     templateUrl: "list-one.component.html",
     styleUrls: ["list-one.component.css"],

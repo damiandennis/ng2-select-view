@@ -4,22 +4,25 @@ import {WindowRefService} from "./services/windowRefService";
 import {ListOneComponent} from "./components/list-one/list-one.component";
 import {ListManyComponent} from "./components/list-many/list.many.component";
 import {DroplistComponent} from "./components/droplist/droplist.component";
-import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
+import {SearchOneComponent} from "./components/search-one/search-one.component";
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule,
         FormsModule
     ],
     declarations: [
         DroplistComponent,
         ListOneComponent,
-        ListManyComponent
+        ListManyComponent,
+        SearchOneComponent
     ],
     exports: [
         ListOneComponent,
         ListManyComponent,
-        DroplistComponent
+        DroplistComponent,
+        SearchOneComponent
     ],
     providers: [
         WindowRefService
