@@ -23,14 +23,14 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class ListManyComponent extends SelectAbstract implements ControlValueAccessor {
 
-    protected loading = true;
-    protected keyList: Array<any> = [];
-    protected valueList: Array<any> = [];
-    protected dropPosition = "below";
+    public loading = true;
+    public keyList: Array<any> = [];
+    public valueList: Array<any> = [];
+    public dropPosition = "below";
     propagateChange = (_: any) => {};
 
     @ViewChild("listRef") public listRef: ElementRef;
-    @ViewChild("listDisplayRef") protected listDisplayRef: ElementRef;
+    @ViewChild("listDisplayRef") public listDisplayRef: ElementRef;
 
     @Input() public keyId = "key";
     @Input() public valueId = "value";

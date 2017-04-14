@@ -22,11 +22,11 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class ListOneComponent extends SelectAbstract implements ControlValueAccessor, OnChanges {
 
-    protected dropPosition = "below";
+    public dropPosition = "below";
 
-    @ViewChild("listRef") protected listRef: ElementRef;
-    @ViewChild("listDisplayRef") protected listDisplayRef: ElementRef;
-    protected propagateChange = (_: any) => {};
+    @ViewChild("listRef") public listRef: ElementRef;
+    @ViewChild("listDisplayRef") public listDisplayRef: ElementRef;
+    public propagateChange = (_: any) => {};
 
     @Input() public options: Array<any> = [];
     @Input() public keyId = "key";
@@ -35,7 +35,7 @@ export class ListOneComponent extends SelectAbstract implements ControlValueAcce
     @Input() public placeholder = "";
     @Input() public searchTerm = "";
     @Input() public isBlock = true;
-    protected loading = true;
+    public loading = true;
     public value: any;
 
     /**

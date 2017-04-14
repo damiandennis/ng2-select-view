@@ -22,17 +22,17 @@ import {WindowRefService} from "../../services/windowRefService";
 })
 export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
 
-    @ViewChild("listDropDownRef") protected listDropDownRef: ElementRef;
-    @ViewChild("listSearchRef") protected listSearchRef: ElementRef;
-    @ViewChild("searchControl") protected searchControl: any;
+    @ViewChild("listDropDownRef") public listDropDownRef: ElementRef;
+    @ViewChild("listSearchRef") public listSearchRef: ElementRef;
+    @ViewChild("searchControl") public searchControl: any;
 
-    protected window: Window;
-    protected document: Document;
-    protected displayPosition: any = {};
-    protected activeItem = 0;
-    protected filteredOptions: Array<any> = [];
-    protected searchTerm = "";
-    protected isInternalHidden = false;
+    public window: Window;
+    public document: Document;
+    public displayPosition: any = {};
+    public activeItem = 0;
+    public filteredOptions: Array<any> = [];
+    public searchTerm = "";
+    public isInternalHidden = false;
 
     @Input() public hasSearch = true;
     @Input() public placeholder = "";
@@ -48,7 +48,7 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
     @Output() public isSearchHiddenChange = new EventEmitter();
     @Output() public dropPositionChange = new EventEmitter();
 
-    constructor(protected winRef: WindowRefService) {
+    constructor(public winRef: WindowRefService) {
         this.window = winRef.nativeWindow;
         this.document = this.window.document;
     }
@@ -341,7 +341,7 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
      *
      * @param event
      */
-    protected killEvent(event: Event) {
+    public killEvent(event: Event) {
         event.preventDefault();
         event.stopPropagation();
     }

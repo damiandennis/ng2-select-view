@@ -15,11 +15,11 @@ import {SelectAbstract} from "../../select.abstract";
 })
 export class SearchOneComponent extends SelectAbstract implements ControlValueAccessor {
 
-    protected dropPosition = "below";
+    public dropPosition = "below";
 
-    @ViewChild("listRef") protected listRef: ElementRef;
-    @ViewChild("listDisplayRef") protected listDisplayRef: ElementRef;
-    protected propagateChange = (_: any) => {};
+    @ViewChild("listRef") public listRef: ElementRef;
+    @ViewChild("listDisplayRef") public listDisplayRef: ElementRef;
+    public propagateChange = (_: any) => {};
 
     public options: Array<any> = [];
     @Input() public keyId = "key";
@@ -27,7 +27,7 @@ export class SearchOneComponent extends SelectAbstract implements ControlValueAc
     @Input() public placeholder = "";
     @Input() public searchTerm = "";
     @Input() public isBlock = true;
-    protected loading = true;
+    public loading = true;
     public value: any;
 
     public writeValue(obj: any): void {
