@@ -3,7 +3,7 @@
      [ngStyle]="{display: isBlock ? 'block' : 'inline'}"
      [class.select2-dropdown-open]="!isSearchHidden"
      [class.select2-drop-above]="!isSearchHidden && dropPosition == 'above'">
-    <a (click)="openSearch($event)"
+    <a (click)="openSearch()"
        class="select2-choice"
        tabindex="-1">
         <span class="select2-chosen">{{valueText}}</span>

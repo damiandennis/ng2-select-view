@@ -2,9 +2,9 @@ export class SelectAbstract {
 
     public static uniqueIndex = 0;
 
-    protected id: any;
-    protected isSearchHidden: boolean = true;
-    protected valueText = "";
+    public id: any;
+    public isSearchHidden: boolean = true;
+    public valueText = "";
 
     constructor() {
         this.id = ++SelectAbstract.uniqueIndex;

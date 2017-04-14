@@ -43,4 +43,6 @@ export class SearchOneComponent extends SelectAbstract implements ControlValueAc
 
     public registerOnTouched(fn: any): void {}
 
+    public updateValue(event: Event) {}
+
 }
