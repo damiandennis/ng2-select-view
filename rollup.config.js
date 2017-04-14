@@ -1,5 +1,5 @@
 export default {
-  entry: 'dist/index.js',
+  entry: 'dist/select-view.module.js',
   dest: 'dist/bundles/ng2-select-view.umd.js',
   sourceMap: false,
   format: 'umd',

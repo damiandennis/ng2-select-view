@@ -28,7 +28,7 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
 
     protected window: Window;
     protected document: Document;
-    protected displayPosition = {};
+    protected displayPosition: any = {};
     protected activeItem = 0;
     protected filteredOptions: Array<any> = [];
     protected searchTerm = "";
@@ -166,7 +166,7 @@ export class DroplistComponent implements OnInit, AfterViewInit, OnChanges {
                             .indexOf(this.searchTerm.toLowerCase()) !== -1;
                 })
                 .map((option: any) => {
-                    let response = {};
+                    let response: any = {};
                     response[this.keyId] = option[this.keyId];
                     let start = option[this.valueId]
                         .toLowerCase()
